@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2016-01-08 15:22:53">
+<sysauto_script action="INSERT_OR_UPDATE">
+<active>true</active>
+<condition/>
+<conditional>false</conditional>
+<name>SDBS Refresh</name>
+<run_as display_value="Admin Guido Bernütz">6545a9df0ff702004cbe306be1050eff</run_as>
+<run_as_tz/>
+<run_dayofmonth>1</run_dayofmonth>
+<run_dayofweek>1</run_dayofweek>
+<run_period>1970-01-01 01:00:00</run_period>
+<run_start>2015-02-24 07:44:52</run_start>
+<run_time>1970-01-01 00:00:00</run_time>
+<run_type>periodically</run_type>
+<script><![CDATA[// SDBS-refresh Job
+// Plugin: Custom Charts muss aktiviert sein
+
+var dbss = new DBSS_Controller();
+
+dbss.refresh();]]></script>
+<sys_class_name>sysauto_script</sys_class_name>
+<sys_created_by>admin_gbernuet</sys_created_by>
+<sys_created_on>2015-02-24 07:45:29</sys_created_on>
+<sys_customer_update>true</sys_customer_update>
+<sys_id>bc0b2beb799271001820451b19e4a8a5</sys_id>
+<sys_mod_count>5</sys_mod_count>
+<sys_name>SDBS Refresh</sys_name>
+<sys_package display_value="gbe_dbas">b9549fdec8acd940ab00a95567e2ff0d</sys_package>
+<sys_policy/>
+<sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+<sys_scope display_value="gbe_dbas">b9549fdec8acd940ab00a95567e2ff0d</sys_scope>
+<sys_update_name>sysauto_script_bc0b2beb799271001820451b19e4a8a5</sys_update_name>
+<sys_updated_by>admin_gbernuetz</sys_updated_by>
+<sys_updated_on>2016-01-08 15:22:32</sys_updated_on>
+<upgrade_safe>false</upgrade_safe>
+</sysauto_script>
+</unload>
