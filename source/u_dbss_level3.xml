@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2016-04-09 15:46:13">
+	<u_dbss_level3 action="INSERT_OR_UPDATE">
+		<sys_created_by>gbt_ext</sys_created_by>
+		<sys_created_on>2013-11-26 15:43:53</sys_created_on>
+		<sys_id>094d8651b0d95100b8cc329fcd34a7fb</sys_id>
+		<sys_mod_count>5</sys_mod_count>
+		<sys_updated_by>admin_gbernuetz</sys_updated_by>
+		<sys_updated_on>2016-01-30 15:41:15</sys_updated_on>
+		<u_filter>active=true^priority&lt;=2</u_filter>
+		<u_level2 display_value="Incidents by Category(High Prio)">1af54e5db0995100b8cc329fcd34a7c7</u_level2>
+		<u_name>Incidents - High Prio</u_name>
+		<u_orderby>number</u_orderby>
+		<u_subtitlefields>sys_created_on,sys_created_by</u_subtitlefields>
+		<u_table>incident</u_table>
+		<u_titlefields>number,short_description</u_titlefields>
+		<u_view>Mobile</u_view>
+	</u_dbss_level3>
+	<u_dbss_level3 action="INSERT_OR_UPDATE">
+		<sys_created_by>admin_gbernuetz</sys_created_by>
+		<sys_created_on>2016-01-30 15:07:28</sys_created_on>
+		<sys_id>8fdc40990f5552004cbe306be1050e52</sys_id>
+		<sys_mod_count>1</sys_mod_count>
+		<sys_updated_by>admin_gbernuetz</sys_updated_by>
+		<sys_updated_on>2016-01-30 15:41:36</sys_updated_on>
+		<u_filter>active=true</u_filter>
+		<u_level2 display_value="Incidents by Category(High Prio)">1af54e5db0995100b8cc329fcd34a7c7</u_level2>
+		<u_name>Active Incidents</u_name>
+		<u_orderby>number</u_orderby>
+		<u_subtitlefields>sys_created_on,sys_created_by</u_subtitlefields>
+		<u_table>incident</u_table>
+		<u_titlefields>number,short_description</u_titlefields>
+		<u_view>Mobile</u_view>
+	</u_dbss_level3>
+	<u_dbss_level3 action="INSERT_OR_UPDATE">
+		<sys_created_by>admin_gbernuetz</sys_created_by>
+		<sys_created_on>2016-04-02 10:17:36</sys_created_on>
+		<sys_id>c7a6af950fea96004cbe306be1050e59</sys_id>
+		<sys_mod_count>4</sys_mod_count>
+		<sys_updated_by>admin_gbernuetz</sys_updated_by>
+		<sys_updated_on>2016-04-09 15:25:25</sys_updated_on>
+		<u_filter>active=true</u_filter>
+		<u_level2 display_value="Request by Stage">ace7a7d50fea96004cbe306be1050eb2</u_level2>
+		<u_name>Open Requests</u_name>
+		<u_orderby>number</u_orderby>
+		<u_subtitlefields>sys_created_on,sys_created_by</u_subtitlefields>
+		<u_table>sc_req_item</u_table>
+		<u_titlefields>number,item.name</u_titlefields>
+		<u_view>Mobile</u_view>
+	</u_dbss_level3>
+	<u_dbss_level3 action="INSERT_OR_UPDATE">
+		<sys_created_by>admin_gbernuetz</sys_created_by>
+		<sys_created_on>2016-01-30 15:08:18</sys_created_on>
+		<sys_id>130d44d90f5552004cbe306be1050e41</sys_id>
+		<sys_mod_count>2</sys_mod_count>
+		<sys_updated_by>admin_gbernuetz</sys_updated_by>
+		<sys_updated_on>2016-04-09 14:22:18</sys_updated_on>
+		<u_filter>active=true</u_filter>
+		<u_level2 display_value="Changes by Category(high Prio)">c02782ddb0995100b8cc329fcd34a735</u_level2>
+		<u_name>Active Changes</u_name>
+		<u_orderby>number</u_orderby>
+		<u_subtitlefields>sys_created_on,sys_created_by</u_subtitlefields>
+		<u_table>change_request</u_table>
+		<u_titlefields>number,short_description</u_titlefields>
+		<u_view>Mobile</u_view>
+	</u_dbss_level3>
+	<u_dbss_level3 action="INSERT_OR_UPDATE">
+		<sys_created_by>gbt_ext</sys_created_by>
+		<sys_created_on>2013-10-23 17:26:10</sys_created_on>
+		<sys_id>a17e5f16c8ecd940ab00a95567e2ffb4</sys_id>
+		<sys_mod_count>9</sys_mod_count>
+		<sys_updated_by>admin_gbernuetz</sys_updated_by>
+		<sys_updated_on>2016-04-09 14:22:03</sys_updated_on>
+		<u_filter>active=true^priority&lt;=2</u_filter>
+		<u_level2 display_value="Changes by Category(high Prio)">c02782ddb0995100b8cc329fcd34a735</u_level2>
+		<u_name>Changes - High Prio</u_name>
+		<u_orderby>number</u_orderby>
+		<u_subtitlefields>sys_created_on,sys_created_by</u_subtitlefields>
+		<u_table>change_request</u_table>
+		<u_titlefields>number,short_description</u_titlefields>
+		<u_view>Mobile</u_view>
+	</u_dbss_level3>
+	<u_dbss_level3 action="INSERT_OR_UPDATE">
+		<sys_created_by>admin_gbernuetz</sys_created_by>
+		<sys_created_on>2016-01-30 15:37:30</sys_created_on>
+		<sys_id>cbb350990f5552004cbe306be1050e59</sys_id>
+		<sys_mod_count>2</sys_mod_count>
+		<sys_updated_by>admin_gbernuetz</sys_updated_by>
+		<sys_updated_on>2016-04-09 15:25:10</sys_updated_on>
+		<u_filter>active=true</u_filter>
+		<u_level2 display_value="Problems by Group">d277865db0995100b8cc329fcd34a728</u_level2>
+		<u_name>Active Problems</u_name>
+		<u_orderby>number</u_orderby>
+		<u_subtitlefields>sys_created_on,sys_created_by</u_subtitlefields>
+		<u_table>problem</u_table>
+		<u_titlefields>number,short_description</u_titlefields>
+		<u_view>Mobile</u_view>
+	</u_dbss_level3>
+</unload>

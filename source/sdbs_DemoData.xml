@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2016-04-09 15:45:39">
+<u_dbss_level1 action="INSERT_OR_UPDATE">
+<sys_created_by>gbt_ext</sys_created_by>
+<sys_created_on>2013-10-23 17:16:29</sys_created_on>
+<sys_id>412c9fd2c8ecd940ab00a95567e2ff89</sys_id>
+<sys_mod_count>18</sys_mod_count>
+<sys_updated_by>admin_gbernuetz</sys_updated_by>
+<sys_updated_on>2016-01-30 16:14:55</sys_updated_on>
+<u_active>true</u_active>
+<u_current_value>53.57</u_current_value>
+<u_displaytype>1</u_displaytype>
+<u_limit1>30</u_limit1>
+<u_limit2>60</u_limit2>
+<u_max>100</u_max>
+<u_min>0</u_min>
+<u_name>High Prio Incidents</u_name>
+<u_order>100</u_order>
+<u_script><![CDATA[var res = '0';
+try {
+	var dbssCtr = new DBSS_Controller();
+	res = dbssCtr.calculateSummaryValue('DBSS_L1_incident priority', 'incident', 'priority', 'active=true', '1');
+} catch (err) {
+	gs.logWarning('Error on Refresh: ' + err,'DBSS UI Action - Refresh');
+}
+answer = res;]]></u_script>
+<u_unit>%</u_unit>
+</u_dbss_level1>
+<u_dbss_level1 action="INSERT_OR_UPDATE">
+<sys_created_by>gbt_ext</sys_created_by>
+<sys_created_on>2013-10-23 17:16:39</sys_created_on>
+<sys_id>e87cd316c8ecd940ab00a95567e2ff1a</sys_id>
+<sys_mod_count>8</sys_mod_count>
+<sys_updated_by>admin_gbernuetz</sys_updated_by>
+<sys_updated_on>2016-01-30 16:17:00</sys_updated_on>
+<u_active>true</u_active>
+<u_current_value>9.09</u_current_value>
+<u_displaytype>1</u_displaytype>
+<u_limit1>30</u_limit1>
+<u_limit2>50</u_limit2>
+<u_max>100</u_max>
+<u_min>0</u_min>
+<u_name>High Prio Problems</u_name>
+<u_order>200</u_order>
+<u_script><![CDATA[var res = '0';
+try {
+	var dbssCtr = new DBSS_Controller();
+	res = dbssCtr.calculateSummaryValue('DBSS_L1_problem priority', 'problem', 'priority', 'active=true', '1');
+} catch (err) {
+	gs.logWarning('Error on Refresh: ' + err,'DBSS UI Action - Refresh');
+}
+answer = res;]]></u_script>
+<u_unit>%</u_unit>
+</u_dbss_level1>
+<u_dbss_level1 action="INSERT_OR_UPDATE">
+<sys_created_by>gbt_ext</sys_created_by>
+<sys_created_on>2013-10-23 17:17:09</sys_created_on>
+<sys_id>049c1792c8ecd940ab00a95567e2ff59</sys_id>
+<sys_mod_count>9</sys_mod_count>
+<sys_updated_by>admin_gbernuetz</sys_updated_by>
+<sys_updated_on>2016-01-30 16:17:49</sys_updated_on>
+<u_active>true</u_active>
+<u_current_value>20</u_current_value>
+<u_displaytype>1</u_displaytype>
+<u_limit1>20</u_limit1>
+<u_limit2>40</u_limit2>
+<u_max>100</u_max>
+<u_min>0</u_min>
+<u_name>High Prio Changes</u_name>
+<u_order>300</u_order>
+<u_script><![CDATA[var res = '0';
+try {
+	var dbssCtr = new DBSS_Controller();
+	res = dbssCtr.calculateSummaryValue('DBSS_L1_changes priority', 'change_request', 'priority', 'active=true', '1');
+} catch (err) {
+	gs.logWarning('Error on Refresh: ' + err,'DBSS UI Action - Refresh');
+}
+answer = res;]]></u_script>
+<u_unit>%</u_unit>
+</u_dbss_level1>
+<u_dbss_level1 action="INSERT_OR_UPDATE">
+<sys_created_by>admin_gbernuetz</sys_created_by>
+<sys_created_on>2016-03-06 14:05:04</sys_created_on>
+<sys_id>0cd719b40f4e12004cbe306be1050e4e</sys_id>
+<sys_mod_count>5</sys_mod_count>
+<sys_updated_by>admin_gbernuetz</sys_updated_by>
+<sys_updated_on>2016-03-06 15:02:14</sys_updated_on>
+<u_active>true</u_active>
+<u_current_value>100</u_current_value>
+<u_displaytype>1</u_displaytype>
+<u_limit1>30</u_limit1>
+<u_limit2>50</u_limit2>
+<u_max>100</u_max>
+<u_min>0</u_min>
+<u_name>Open Requests</u_name>
+<u_order>400</u_order>
+<u_script><![CDATA[var res = '0';
+try {
+	var dbssCtr = new DBSS_Controller();
+	res = dbssCtr.calculateSummaryValue('DBSS_L1_sc_requests_open', 'sc_req_item', 'state', 
+		'active=true^sys_created_onONThis quarter@javascript:gs.beginningOfThisQuarter()@javascript:gs.endOfThisQuarter()', '1');
+} catch (err) {
+	gs.logWarning('Error on Refresh: ' + err,'DBSS UI Action - Refresh');
+}
+answer = res;]]></u_script>
+<u_unit>%</u_unit>
+</u_dbss_level1>
+	<u_dbss_level2 action="INSERT_OR_UPDATE">
+		<sys_created_by>gbt_ext</sys_created_by>
+		<sys_created_on>2013-10-23 17:33:29</sys_created_on>
+		<sys_id>d740ef16c8ecd940ab00a95567e2ff7a</sys_id>
+		<sys_mod_count>2372</sys_mod_count>
+		<sys_updated_by>admin_gbernuetz</sys_updated_by>
+		<sys_updated_on>2016-04-09 15:44:56</sys_updated_on>
+		<u_category_field>category</u_category_field>
+		<u_displaytype>1</u_displaytype>
+		<u_filter>active=true</u_filter>
+		<u_level1 display_value="High Prio Changes">049c1792c8ecd940ab00a95567e2ff59</u_level1>
+		<u_level3 display_value="Active Changes">130d44d90f5552004cbe306be1050e41</u_level3>
+		<u_name>Changes by Category</u_name>
+		<u_order>300</u_order>
+		<u_summaryset display_value="RPTSUM0056336">52b4347f0fe252004cbe306be1050e45</u_summaryset>
+		<u_table>change_request</u_table>
+	</u_dbss_level2>
+	<u_dbss_level2 action="INSERT_OR_UPDATE">
+		<sys_created_by>gbt_ext</sys_created_by>
+		<sys_created_on>2013-11-26 15:17:03</sys_created_on>
+		<sys_id>c02782ddb0995100b8cc329fcd34a735</sys_id>
+		<sys_mod_count>2369</sys_mod_count>
+		<sys_updated_by>admin_gbernuetz</sys_updated_by>
+		<sys_updated_on>2016-04-09 15:44:56</sys_updated_on>
+		<u_category_field>category</u_category_field>
+		<u_displaytype>1</u_displaytype>
+		<u_filter>active=true^priority&lt;=2</u_filter>
+		<u_level1 display_value="High Prio Changes">049c1792c8ecd940ab00a95567e2ff59</u_level1>
+		<u_level3 display_value="Changes - High Prio">a17e5f16c8ecd940ab00a95567e2ffb4</u_level3>
+		<u_name>Changes by Category(high Prio)</u_name>
+		<u_order>200</u_order>
+		<u_summaryset display_value="RPTSUM0056334">1ab4347f0fe252004cbe306be1050e44</u_summaryset>
+		<u_table>change_request</u_table>
+	</u_dbss_level2>
+	<u_dbss_level2 action="INSERT_OR_UPDATE">
+		<sys_created_by>gbt_ext</sys_created_by>
+		<sys_created_on>2013-11-26 15:18:00</sys_created_on>
+		<sys_id>465706ddb0995100b8cc329fcd34a726</sys_id>
+		<sys_mod_count>2368</sys_mod_count>
+		<sys_updated_by>admin_gbernuetz</sys_updated_by>
+		<sys_updated_on>2016-04-09 15:44:55</sys_updated_on>
+		<u_category_field>assignment_group</u_category_field>
+		<u_displaytype>1</u_displaytype>
+		<u_filter>active=true</u_filter>
+		<u_level1 display_value="High Prio Changes">049c1792c8ecd940ab00a95567e2ff59</u_level1>
+		<u_level3 display_value="Active Changes">130d44d90f5552004cbe306be1050e41</u_level3>
+		<u_name>Changes by Group</u_name>
+		<u_order>400</u_order>
+		<u_summaryset display_value="RPTSUM0056324">82b4347f0fe252004cbe306be1050e40</u_summaryset>
+		<u_table>change_request</u_table>
+	</u_dbss_level2>
+	<u_dbss_level2 action="INSERT_OR_UPDATE">
+		<sys_created_by>gbt_ext</sys_created_by>
+		<sys_created_on>2013-10-23 17:19:59</sys_created_on>
+		<sys_id>653d9716c8ecd940ab00a95567e2ffe4</sys_id>
+		<sys_mod_count>2372</sys_mod_count>
+		<sys_updated_by>admin_gbernuetz</sys_updated_by>
+		<sys_updated_on>2016-04-09 15:44:55</sys_updated_on>
+		<u_category_field>priority</u_category_field>
+		<u_displaytype>1</u_displaytype>
+		<u_filter>active=true</u_filter>
+		<u_level1 display_value="High Prio Changes">049c1792c8ecd940ab00a95567e2ff59</u_level1>
+		<u_level3 display_value="Active Changes">130d44d90f5552004cbe306be1050e41</u_level3>
+		<u_name>Changes by Prio</u_name>
+		<u_order>100</u_order>
+		<u_summaryset display_value="RPTSUM0056328">4eb4347f0fe252004cbe306be1050e41</u_summaryset>
+		<u_table>change_request</u_table>
+	</u_dbss_level2>
+	<u_dbss_level2 action="INSERT_OR_UPDATE">
+		<sys_created_by>gbt_ext</sys_created_by>
+		<sys_created_on>2013-10-23 17:32:20</sys_created_on>
+		<sys_id>ea00e356c8ecd940ab00a95567e2ff8c</sys_id>
+		<sys_mod_count>2371</sys_mod_count>
+		<sys_updated_by>admin_gbernuetz</sys_updated_by>
+		<sys_updated_on>2016-04-09 15:44:56</sys_updated_on>
+		<u_category_field>category</u_category_field>
+		<u_displaytype>1</u_displaytype>
+		<u_filter>active=true</u_filter>
+		<u_level1 display_value="High Prio Incidents">412c9fd2c8ecd940ab00a95567e2ff89</u_level1>
+		<u_level3 display_value="Active Incidents">8fdc40990f5552004cbe306be1050e52</u_level3>
+		<u_name>Incidents by Category</u_name>
+		<u_order>400</u_order>
+		<u_summaryset display_value="RPTSUM0056337">1ab4347f0fe252004cbe306be1050e45</u_summaryset>
+		<u_table>incident</u_table>
+	</u_dbss_level2>
+	<u_dbss_level2 action="INSERT_OR_UPDATE">
+		<sys_created_by>gbt_ext</sys_created_by>
+		<sys_created_on>2013-11-26 15:12:01</sys_created_on>
+		<sys_id>1af54e5db0995100b8cc329fcd34a7c7</sys_id>
+		<sys_mod_count>2369</sys_mod_count>
+		<sys_updated_by>admin_gbernuetz</sys_updated_by>
+		<sys_updated_on>2016-04-09 15:44:55</sys_updated_on>
+		<u_category_field>category</u_category_field>
+		<u_displaytype>1</u_displaytype>
+		<u_filter>active=true^priority&lt;=2</u_filter>
+		<u_level1 display_value="High Prio Incidents">412c9fd2c8ecd940ab00a95567e2ff89</u_level1>
+		<u_level3 display_value="Incidents - High Prio">094d8651b0d95100b8cc329fcd34a7fb</u_level3>
+		<u_name>Incidents by Category(High Prio)</u_name>
+		<u_order>200</u_order>
+		<u_summaryset display_value="RPTSUM0056323">c2b4f03f0fe252004cbe306be1050e00</u_summaryset>
+		<u_table>incident</u_table>
+	</u_dbss_level2>
+	<u_dbss_level2 action="INSERT_OR_UPDATE">
+		<sys_created_by>gbt_ext</sys_created_by>
+		<sys_created_on>2013-11-26 15:15:58</sys_created_on>
+		<sys_id>54e642ddb0995100b8cc329fcd34a758</sys_id>
+		<sys_mod_count>2368</sys_mod_count>
+		<sys_updated_by>admin_gbernuetz</sys_updated_by>
+		<sys_updated_on>2016-04-09 15:44:55</sys_updated_on>
+		<u_category_field>assignment_group</u_category_field>
+		<u_displaytype>1</u_displaytype>
+		<u_filter>active=true</u_filter>
+		<u_level1 display_value="High Prio Incidents">412c9fd2c8ecd940ab00a95567e2ff89</u_level1>
+		<u_level3 display_value="Active Incidents">8fdc40990f5552004cbe306be1050e52</u_level3>
+		<u_name>Incidents by Group</u_name>
+		<u_order>600</u_order>
+		<u_summaryset display_value="RPTSUM0056327">46b4347f0fe252004cbe306be1050e41</u_summaryset>
+		<u_table>incident</u_table>
+	</u_dbss_level2>
+	<u_dbss_level2 action="INSERT_OR_UPDATE">
+		<sys_created_by>gbt_ext</sys_created_by>
+		<sys_created_on>2013-11-26 15:14:53</sys_created_on>
+		<sys_id>6ca6c65db0995100b8cc329fcd34a778</sys_id>
+		<sys_mod_count>2370</sys_mod_count>
+		<sys_updated_by>admin_gbernuetz</sys_updated_by>
+		<sys_updated_on>2016-04-09 15:44:55</sys_updated_on>
+		<u_category_field>assignment_group</u_category_field>
+		<u_displaytype>1</u_displaytype>
+		<u_filter>active=true^priority&lt;=2</u_filter>
+		<u_level1 display_value="High Prio Incidents">412c9fd2c8ecd940ab00a95567e2ff89</u_level1>
+		<u_level3 display_value="Incidents - High Prio">094d8651b0d95100b8cc329fcd34a7fb</u_level3>
+		<u_name>Incidents by Group(High Prio)</u_name>
+		<u_order>300</u_order>
+		<u_summaryset display_value="RPTSUM0056329">06b4347f0fe252004cbe306be1050e42</u_summaryset>
+		<u_table>incident</u_table>
+	</u_dbss_level2>
+	<u_dbss_level2 action="INSERT_OR_UPDATE">
+		<sys_created_by>gbt_ext</sys_created_by>
+		<sys_created_on>2013-10-23 17:19:20</sys_created_on>
+		<sys_id>4fec5716c8ecd940ab00a95567e2ff71</sys_id>
+		<sys_mod_count>2371</sys_mod_count>
+		<sys_updated_by>admin_gbernuetz</sys_updated_by>
+		<sys_updated_on>2016-04-09 15:44:55</sys_updated_on>
+		<u_category_field>priority</u_category_field>
+		<u_displaytype>1</u_displaytype>
+		<u_filter>active=true</u_filter>
+		<u_level1 display_value="High Prio Incidents">412c9fd2c8ecd940ab00a95567e2ff89</u_level1>
+		<u_level3 display_value="Active Incidents">8fdc40990f5552004cbe306be1050e52</u_level3>
+		<u_name>Incidents by Prio</u_name>
+		<u_order>500</u_order>
+		<u_summaryset display_value="RPTSUM0056325">86b4347f0fe252004cbe306be1050e40</u_summaryset>
+		<u_table>incident</u_table>
+	</u_dbss_level2>
+	<u_dbss_level2 action="INSERT_OR_UPDATE">
+		<sys_created_by>gbt_ext</sys_created_by>
+		<sys_created_on>2013-11-26 15:20:35</sys_created_on>
+		<sys_id>fbe78e9db0995100b8cc329fcd34a7f6</sys_id>
+		<sys_mod_count>2369</sys_mod_count>
+		<sys_updated_by>admin_gbernuetz</sys_updated_by>
+		<sys_updated_on>2016-04-09 15:44:56</sys_updated_on>
+		<u_category_field>state</u_category_field>
+		<u_displaytype>1</u_displaytype>
+		<u_filter>active=true^priority&lt;=2</u_filter>
+		<u_level1 display_value="High Prio Incidents">412c9fd2c8ecd940ab00a95567e2ff89</u_level1>
+		<u_level3 display_value="Incidents - High Prio">094d8651b0d95100b8cc329fcd34a7fb</u_level3>
+		<u_name>Incidents by State(High Prio)</u_name>
+		<u_order>100</u_order>
+		<u_summaryset display_value="RPTSUM0056338">92b4347f0fe252004cbe306be1050e46</u_summaryset>
+		<u_table>incident</u_table>
+	</u_dbss_level2>
+	<u_dbss_level2 action="INSERT_OR_UPDATE">
+		<sys_created_by>gbt_ext</sys_created_by>
+		<sys_created_on>2013-11-26 15:18:34</sys_created_on>
+		<sys_id>d277865db0995100b8cc329fcd34a728</sys_id>
+		<sys_mod_count>2368</sys_mod_count>
+		<sys_updated_by>admin_gbernuetz</sys_updated_by>
+		<sys_updated_on>2016-04-09 15:44:56</sys_updated_on>
+		<u_category_field>assignment_group</u_category_field>
+		<u_displaytype>1</u_displaytype>
+		<u_filter>active=true</u_filter>
+		<u_level1 display_value="High Prio Problems">e87cd316c8ecd940ab00a95567e2ff1a</u_level1>
+		<u_level3 display_value="Active Problems">cbb350990f5552004cbe306be1050e59</u_level3>
+		<u_name>Problems by Group</u_name>
+		<u_order>200</u_order>
+		<u_summaryset display_value="RPTSUM0056335">5eb4347f0fe252004cbe306be1050e44</u_summaryset>
+		<u_table>problem</u_table>
+	</u_dbss_level2>
+	<u_dbss_level2 action="INSERT_OR_UPDATE">
+		<sys_created_by>gbt_ext</sys_created_by>
+		<sys_created_on>2013-10-23 17:19:41</sys_created_on>
+		<sys_id>512d5716c8ecd940ab00a95567e2ffd7</sys_id>
+		<sys_mod_count>2371</sys_mod_count>
+		<sys_updated_by>admin_gbernuetz</sys_updated_by>
+		<sys_updated_on>2016-04-09 15:44:55</sys_updated_on>
+		<u_category_field>priority</u_category_field>
+		<u_displaytype>1</u_displaytype>
+		<u_filter>active=true</u_filter>
+		<u_level1 display_value="High Prio Problems">e87cd316c8ecd940ab00a95567e2ff1a</u_level1>
+		<u_level3 display_value="Active Problems">cbb350990f5552004cbe306be1050e59</u_level3>
+		<u_name>Problems by Prio</u_name>
+		<u_order>100</u_order>
+		<u_summaryset display_value="RPTSUM0056326">8eb4347f0fe252004cbe306be1050e40</u_summaryset>
+		<u_table>problem</u_table>
+	</u_dbss_level2>
+	<u_dbss_level2 action="INSERT_OR_UPDATE">
+		<sys_created_by>admin_gbernuetz</sys_created_by>
+		<sys_created_on>2016-04-02 10:04:08</sys_created_on>
+		<sys_id>7b53e7950fea96004cbe306be1050e08</sys_id>
+		<sys_mod_count>179</sys_mod_count>
+		<sys_updated_by>admin_gbernuetz</sys_updated_by>
+		<sys_updated_on>2016-04-09 15:44:55</sys_updated_on>
+		<u_category_field>priority</u_category_field>
+		<u_displaytype>1</u_displaytype>
+		<u_filter>active=true</u_filter>
+		<u_level1 display_value="Open Requests">0cd719b40f4e12004cbe306be1050e4e</u_level1>
+		<u_level3 display_value="Open Requests">c7a6af950fea96004cbe306be1050e59</u_level3>
+		<u_name>Request by Priority</u_name>
+		<u_order>100</u_order>
+		<u_summaryset display_value="RPTSUM0056330">1eb4347f0fe252004cbe306be1050e42</u_summaryset>
+		<u_table>sc_req_item</u_table>
+	</u_dbss_level2>
+	<u_dbss_level2 action="INSERT_OR_UPDATE">
+		<sys_created_by>admin_gbernuetz</sys_created_by>
+		<sys_created_on>2016-04-02 10:21:52</sys_created_on>
+		<sys_id>b5a7a7d50fea96004cbe306be1050eb2</sys_id>
+		<sys_mod_count>177</sys_mod_count>
+		<sys_updated_by>admin_gbernuetz</sys_updated_by>
+		<sys_updated_on>2016-04-09 15:44:55</sys_updated_on>
+		<u_category_field>priority</u_category_field>
+		<u_displaytype>1</u_displaytype>
+		<u_filter>active=true^sys_created_onONLast month@javascript:gs.beginningOfLastMonth()@javascript:gs.endOfLastM</u_filter>
+		<u_level1 display_value="Open Requests">0cd719b40f4e12004cbe306be1050e4e</u_level1>
+		<u_level3 display_value="Open Requests">c7a6af950fea96004cbe306be1050e59</u_level3>
+		<u_name>Request by Priority last Month</u_name>
+		<u_order>150</u_order>
+		<u_summaryset display_value="RPTSUM0056333">16b4347f0fe252004cbe306be1050e44</u_summaryset>
+		<u_table>sc_req_item</u_table>
+	</u_dbss_level2>
+	<u_dbss_level2 action="INSERT_OR_UPDATE">
+		<sys_created_by>admin_gbernuetz</sys_created_by>
+		<sys_created_on>2016-04-02 10:22:53</sys_created_on>
+		<sys_id>ace7a7d50fea96004cbe306be1050eb2</sys_id>
+		<sys_mod_count>177</sys_mod_count>
+		<sys_updated_by>admin_gbernuetz</sys_updated_by>
+		<sys_updated_on>2016-04-09 15:44:55</sys_updated_on>
+		<u_category_field>stage</u_category_field>
+		<u_displaytype>1</u_displaytype>
+		<u_filter>active=true</u_filter>
+		<u_level1 display_value="Open Requests">0cd719b40f4e12004cbe306be1050e4e</u_level1>
+		<u_level3 display_value="Open Requests">c7a6af950fea96004cbe306be1050e59</u_level3>
+		<u_name>Request by Stage</u_name>
+		<u_order>200</u_order>
+		<u_summaryset display_value="RPTSUM0056332">96b4347f0fe252004cbe306be1050e43</u_summaryset>
+		<u_table>sc_req_item</u_table>
+	</u_dbss_level2>
+	<u_dbss_level2 action="INSERT_OR_UPDATE">
+		<sys_created_by>admin_gbernuetz</sys_created_by>
+		<sys_created_on>2016-04-02 10:08:14</sys_created_on>
+		<sys_id>8284eb950fea96004cbe306be1050e17</sys_id>
+		<sys_mod_count>180</sys_mod_count>
+		<sys_updated_by>admin_gbernuetz</sys_updated_by>
+		<sys_updated_on>2016-04-09 15:44:55</sys_updated_on>
+		<u_category_field>stage</u_category_field>
+		<u_displaytype>1</u_displaytype>
+		<u_filter>active=true^sys_created_onONLast month@javascript:gs.beginningOfLastMonth()@javascript:gs.endOfLastM</u_filter>
+		<u_level1 display_value="Open Requests">0cd719b40f4e12004cbe306be1050e4e</u_level1>
+		<u_level3 display_value="Open Requests">c7a6af950fea96004cbe306be1050e59</u_level3>
+		<u_name>Request by Stage last Month</u_name>
+		<u_order>250</u_order>
+		<u_summaryset display_value="RPTSUM0056331">92b4347f0fe252004cbe306be1050e43</u_summaryset>
+		<u_table>sc_req_item</u_table>
+	</u_dbss_level2>
+	<u_dbss_level3 action="INSERT_OR_UPDATE">
+		<sys_created_by>gbt_ext</sys_created_by>
+		<sys_created_on>2013-11-26 15:43:53</sys_created_on>
+		<sys_id>094d8651b0d95100b8cc329fcd34a7fb</sys_id>
+		<sys_mod_count>5</sys_mod_count>
+		<sys_updated_by>admin_gbernuetz</sys_updated_by>
+		<sys_updated_on>2016-01-30 15:41:15</sys_updated_on>
+		<u_filter>active=true^priority&lt;=2</u_filter>
+		<u_level2 display_value="Incidents by Category(High Prio)">1af54e5db0995100b8cc329fcd34a7c7</u_level2>
+		<u_name>Incidents - High Prio</u_name>
+		<u_orderby>number</u_orderby>
+		<u_subtitlefields>sys_created_on,sys_created_by</u_subtitlefields>
+		<u_table>incident</u_table>
+		<u_titlefields>number,short_description</u_titlefields>
+		<u_view>Mobile</u_view>
+	</u_dbss_level3>
+	<u_dbss_level3 action="INSERT_OR_UPDATE">
+		<sys_created_by>admin_gbernuetz</sys_created_by>
+		<sys_created_on>2016-01-30 15:07:28</sys_created_on>
+		<sys_id>8fdc40990f5552004cbe306be1050e52</sys_id>
+		<sys_mod_count>1</sys_mod_count>
+		<sys_updated_by>admin_gbernuetz</sys_updated_by>
+		<sys_updated_on>2016-01-30 15:41:36</sys_updated_on>
+		<u_filter>active=true</u_filter>
+		<u_level2 display_value="Incidents by Category(High Prio)">1af54e5db0995100b8cc329fcd34a7c7</u_level2>
+		<u_name>Active Incidents</u_name>
+		<u_orderby>number</u_orderby>
+		<u_subtitlefields>sys_created_on,sys_created_by</u_subtitlefields>
+		<u_table>incident</u_table>
+		<u_titlefields>number,short_description</u_titlefields>
+		<u_view>Mobile</u_view>
+	</u_dbss_level3>
+	<u_dbss_level3 action="INSERT_OR_UPDATE">
+		<sys_created_by>admin_gbernuetz</sys_created_by>
+		<sys_created_on>2016-04-02 10:17:36</sys_created_on>
+		<sys_id>c7a6af950fea96004cbe306be1050e59</sys_id>
+		<sys_mod_count>4</sys_mod_count>
+		<sys_updated_by>admin_gbernuetz</sys_updated_by>
+		<sys_updated_on>2016-04-09 15:25:25</sys_updated_on>
+		<u_filter>active=true</u_filter>
+		<u_level2 display_value="Request by Stage">ace7a7d50fea96004cbe306be1050eb2</u_level2>
+		<u_name>Open Requests</u_name>
+		<u_orderby>number</u_orderby>
+		<u_subtitlefields>sys_created_on,sys_created_by</u_subtitlefields>
+		<u_table>sc_req_item</u_table>
+		<u_titlefields>number,item.name</u_titlefields>
+		<u_view>Mobile</u_view>
+	</u_dbss_level3>
+	<u_dbss_level3 action="INSERT_OR_UPDATE">
+		<sys_created_by>admin_gbernuetz</sys_created_by>
+		<sys_created_on>2016-01-30 15:08:18</sys_created_on>
+		<sys_id>130d44d90f5552004cbe306be1050e41</sys_id>
+		<sys_mod_count>2</sys_mod_count>
+		<sys_updated_by>admin_gbernuetz</sys_updated_by>
+		<sys_updated_on>2016-04-09 14:22:18</sys_updated_on>
+		<u_filter>active=true</u_filter>
+		<u_level2 display_value="Changes by Category(high Prio)">c02782ddb0995100b8cc329fcd34a735</u_level2>
+		<u_name>Active Changes</u_name>
+		<u_orderby>number</u_orderby>
+		<u_subtitlefields>sys_created_on,sys_created_by</u_subtitlefields>
+		<u_table>change_request</u_table>
+		<u_titlefields>number,short_description</u_titlefields>
+		<u_view>Mobile</u_view>
+	</u_dbss_level3>
+	<u_dbss_level3 action="INSERT_OR_UPDATE">
+		<sys_created_by>gbt_ext</sys_created_by>
+		<sys_created_on>2013-10-23 17:26:10</sys_created_on>
+		<sys_id>a17e5f16c8ecd940ab00a95567e2ffb4</sys_id>
+		<sys_mod_count>9</sys_mod_count>
+		<sys_updated_by>admin_gbernuetz</sys_updated_by>
+		<sys_updated_on>2016-04-09 14:22:03</sys_updated_on>
+		<u_filter>active=true^priority&lt;=2</u_filter>
+		<u_level2 display_value="Changes by Category(high Prio)">c02782ddb0995100b8cc329fcd34a735</u_level2>
+		<u_name>Changes - High Prio</u_name>
+		<u_orderby>number</u_orderby>
+		<u_subtitlefields>sys_created_on,sys_created_by</u_subtitlefields>
+		<u_table>change_request</u_table>
+		<u_titlefields>number,short_description</u_titlefields>
+		<u_view>Mobile</u_view>
+	</u_dbss_level3>
+	<u_dbss_level3 action="INSERT_OR_UPDATE">
+		<sys_created_by>admin_gbernuetz</sys_created_by>
+		<sys_created_on>2016-01-30 15:37:30</sys_created_on>
+		<sys_id>cbb350990f5552004cbe306be1050e59</sys_id>
+		<sys_mod_count>2</sys_mod_count>
+		<sys_updated_by>admin_gbernuetz</sys_updated_by>
+		<sys_updated_on>2016-04-09 15:25:10</sys_updated_on>
+		<u_filter>active=true</u_filter>
+		<u_level2 display_value="Problems by Group">d277865db0995100b8cc329fcd34a728</u_level2>
+		<u_name>Active Problems</u_name>
+		<u_orderby>number</u_orderby>
+		<u_subtitlefields>sys_created_on,sys_created_by</u_subtitlefields>
+		<u_table>problem</u_table>
+		<u_titlefields>number,short_description</u_titlefields>
+		<u_view>Mobile</u_view>
+	</u_dbss_level3>
+</unload>

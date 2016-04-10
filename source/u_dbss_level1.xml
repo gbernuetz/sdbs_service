@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2016-04-09 15:45:39">
+<u_dbss_level1 action="INSERT_OR_UPDATE">
+<sys_created_by>gbt_ext</sys_created_by>
+<sys_created_on>2013-10-23 17:16:29</sys_created_on>
+<sys_id>412c9fd2c8ecd940ab00a95567e2ff89</sys_id>
+<sys_mod_count>18</sys_mod_count>
+<sys_updated_by>admin_gbernuetz</sys_updated_by>
+<sys_updated_on>2016-01-30 16:14:55</sys_updated_on>
+<u_active>true</u_active>
+<u_current_value>53.57</u_current_value>
+<u_displaytype>1</u_displaytype>
+<u_limit1>30</u_limit1>
+<u_limit2>60</u_limit2>
+<u_max>100</u_max>
+<u_min>0</u_min>
+<u_name>High Prio Incidents</u_name>
+<u_order>100</u_order>
+<u_script><![CDATA[var res = '0';
+try {
+	var dbssCtr = new DBSS_Controller();
+	res = dbssCtr.calculateSummaryValue('DBSS_L1_incident priority', 'incident', 'priority', 'active=true', '1');
+} catch (err) {
+	gs.logWarning('Error on Refresh: ' + err,'DBSS UI Action - Refresh');
+}
+answer = res;]]></u_script>
+<u_unit>%</u_unit>
+</u_dbss_level1>
+<u_dbss_level1 action="INSERT_OR_UPDATE">
+<sys_created_by>gbt_ext</sys_created_by>
+<sys_created_on>2013-10-23 17:16:39</sys_created_on>
+<sys_id>e87cd316c8ecd940ab00a95567e2ff1a</sys_id>
+<sys_mod_count>8</sys_mod_count>
+<sys_updated_by>admin_gbernuetz</sys_updated_by>
+<sys_updated_on>2016-01-30 16:17:00</sys_updated_on>
+<u_active>true</u_active>
+<u_current_value>9.09</u_current_value>
+<u_displaytype>1</u_displaytype>
+<u_limit1>30</u_limit1>
+<u_limit2>50</u_limit2>
+<u_max>100</u_max>
+<u_min>0</u_min>
+<u_name>High Prio Problems</u_name>
+<u_order>200</u_order>
+<u_script><![CDATA[var res = '0';
+try {
+	var dbssCtr = new DBSS_Controller();
+	res = dbssCtr.calculateSummaryValue('DBSS_L1_problem priority', 'problem', 'priority', 'active=true', '1');
+} catch (err) {
+	gs.logWarning('Error on Refresh: ' + err,'DBSS UI Action - Refresh');
+}
+answer = res;]]></u_script>
+<u_unit>%</u_unit>
+</u_dbss_level1>
+<u_dbss_level1 action="INSERT_OR_UPDATE">
+<sys_created_by>gbt_ext</sys_created_by>
+<sys_created_on>2013-10-23 17:17:09</sys_created_on>
+<sys_id>049c1792c8ecd940ab00a95567e2ff59</sys_id>
+<sys_mod_count>9</sys_mod_count>
+<sys_updated_by>admin_gbernuetz</sys_updated_by>
+<sys_updated_on>2016-01-30 16:17:49</sys_updated_on>
+<u_active>true</u_active>
+<u_current_value>20</u_current_value>
+<u_displaytype>1</u_displaytype>
+<u_limit1>20</u_limit1>
+<u_limit2>40</u_limit2>
+<u_max>100</u_max>
+<u_min>0</u_min>
+<u_name>High Prio Changes</u_name>
+<u_order>300</u_order>
+<u_script><![CDATA[var res = '0';
+try {
+	var dbssCtr = new DBSS_Controller();
+	res = dbssCtr.calculateSummaryValue('DBSS_L1_changes priority', 'change_request', 'priority', 'active=true', '1');
+} catch (err) {
+	gs.logWarning('Error on Refresh: ' + err,'DBSS UI Action - Refresh');
+}
+answer = res;]]></u_script>
+<u_unit>%</u_unit>
+</u_dbss_level1>
+<u_dbss_level1 action="INSERT_OR_UPDATE">
+<sys_created_by>admin_gbernuetz</sys_created_by>
+<sys_created_on>2016-03-06 14:05:04</sys_created_on>
+<sys_id>0cd719b40f4e12004cbe306be1050e4e</sys_id>
+<sys_mod_count>5</sys_mod_count>
+<sys_updated_by>admin_gbernuetz</sys_updated_by>
+<sys_updated_on>2016-03-06 15:02:14</sys_updated_on>
+<u_active>true</u_active>
+<u_current_value>100</u_current_value>
+<u_displaytype>1</u_displaytype>
+<u_limit1>30</u_limit1>
+<u_limit2>50</u_limit2>
+<u_max>100</u_max>
+<u_min>0</u_min>
+<u_name>Open Requests</u_name>
+<u_order>400</u_order>
+<u_script><![CDATA[var res = '0';
+try {
+	var dbssCtr = new DBSS_Controller();
+	res = dbssCtr.calculateSummaryValue('DBSS_L1_sc_requests_open', 'sc_req_item', 'state', 
+		'active=true^sys_created_onONThis quarter@javascript:gs.beginningOfThisQuarter()@javascript:gs.endOfThisQuarter()', '1');
+} catch (err) {
+	gs.logWarning('Error on Refresh: ' + err,'DBSS UI Action - Refresh');
+}
+answer = res;]]></u_script>
+<u_unit>%</u_unit>
+</u_dbss_level1>
+</unload>
